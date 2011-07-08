@@ -1,8 +1,8 @@
 parameters:
   assetic.compass.class: "Majisti\\UtilsBundle\Assetic\Filter\Sass\CompassFilter"
   assetic.compass.compass_path: "/usr/bin/compass"
-  assetic.compass.load_path: "%kernel.root_dir%/../vendor/bundles/Majisti/UtilsBundle/Resources/sass"
-  assetic.compass.http_path: "/majistiw2/web/bundles/majistiwserver"
+  assetic.compass.images_dir: "%kernel.root_dir%/../web"
+  assetic.compass.http_path: "/" 
 
 services:
   compass:
@@ -11,6 +11,6 @@ services:
     calls:
       - [ "setImagesDir", [ %assetic.compass.images_dir% ] ]
       - [ "setHttpPath", [ %assetic.compass.http_path% ] ]
-      - [ "addLoadPath", [ %assetic.compass.load_path% ]]
+      - [ "addLoadPath", [ "%kernel.root_dir%/../vendor/bundles/Majisti/UtilsBundle/Resources/sass" ]]
     tags:
       - { name: assetic.filter, alias: compass }

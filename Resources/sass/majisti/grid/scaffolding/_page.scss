@@ -1,0 +1,43 @@
+body.bp {
+    @include blueprint-typography(true);
+    @include blueprint-utilities;
+    @include blueprint-debug;
+    @include blueprint-interaction;
+  
+    a {
+        color: $primaryColor;
+        text-decoration: none;
+        &:Hover {
+            text-decoration: underline;
+            color: $secondaryColor;
+        }
+    }
+}
+
+.maj-cta-link {
+    @include maj-theme-icon-xsmall-sprite(arrow-right);
+    display: block;
+    padding: 0 0 0 2em;
+    height: 16px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.maj-cta-block {
+    background: #eee;
+    min-height: 10px;
+    padding: 0.5em 1em;
+    border: 1px solid #ccc;
+
+    #{headers()} {
+        &.title {
+            color: $supportColor;
+            font-weight: bold;
+        }
+    }
+
+    .cta { 
+        @extend .majws-cta-link;
+        float: right;
+    }
+}

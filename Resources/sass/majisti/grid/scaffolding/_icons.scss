@@ -1,0 +1,14 @@
+@import "bundles/majistiutils/images/icon/maj-icon-xsmall/*.png";
+@import "bundles/majistiutils/images/icon/maj-icon-small/*.png"; 
+@import "bundles/majistiutils/images/icon/maj-icon-medium/*.png";
+
+#{$maj-icon-xsmall-sprite-base-class}, 
+#{$maj-icon-small-sprite-base-class}, 
+#{$maj-icon-medium-sprite-base-class} {
+    border: 0;
+    display: block;
+}
+
+@include all-maj-icon-xsmall-sprites(true);
+@include all-maj-icon-small-sprites(true);
+@include all-maj-icon-medium-sprites(true);
