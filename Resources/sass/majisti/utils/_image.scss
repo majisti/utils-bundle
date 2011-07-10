@@ -1,4 +1,7 @@
 //applies theme related background image with background repeat and position
+
+$baseImagePath: '' !default;
+
 @mixin image($url, $repeat: 'no-repeat', $position: top, $themable: false,
       $inline: false) {
     @if $themable {
