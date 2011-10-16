@@ -1,6 +1,6 @@
 <?php
 
-namespace Majisti\UtilsBundle\Test\Collections;
+namespace Majisti\UtilsBundle\Tests\Collections;
 
 use Majisti\UtilsBundle\Collections\Stack;
 
