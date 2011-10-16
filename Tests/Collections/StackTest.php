@@ -1,6 +1,6 @@
 <?php
 
-namespace Majisti\UtilsBundle\Test\Collections;
+namespace Majisti\UtilsBundle\Tests\Collections;
 
 use Majisti\UtilsBundle\Collections\Stack;
 
@@ -27,8 +27,7 @@ class StackTest extends \PHPUnit_Framework_TestCase
     public function test__construct()
     {
         $stack = new Stack();
-        $this->assertTrue($stack instanceof Stack,
-            "Stack has to be an instance of Stack class.");
+        $this->assertTrue($stack->isEmpty());
     }
     
     /**

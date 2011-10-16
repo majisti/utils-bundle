@@ -8,7 +8,7 @@ namespace Majisti\UtilsBundle\Collections;
  * with it starts up with the last element of this stack, which
  * is the last in.
  *
- * @author Steven Rosato <steven.rosato at majisti.com>
+ * @author Majisti
  * @license http://opensource.org/licenses/gpl-license.php GNU Public License
  */
 class Stack implements \IteratorAggregate, \Countable
