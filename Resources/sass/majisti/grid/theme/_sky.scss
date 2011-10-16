@@ -1,0 +1,12 @@
+$theme: 'sky';
+
+$primaryColor: #003248;
+$secondaryColor: #669933;
+$supportColor: #cc6600;
+
+$bgColor: #ece9de;
+$borderColor: #ccc;
+$shadowColor: #666;
+
+@import "bundles/majistiutils/images/sky/icon/maj-theme-icon-xsmall/*.png";
+@include all-maj-theme-icon-xsmall-sprites(true);
