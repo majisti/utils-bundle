@@ -1,0 +1,38 @@
+#footer {
+    .container {
+        @include container;
+        
+        .twitter {
+            @include maj-icon-xsmall-sprite(twitter);
+            @include prepend(0.5);
+            font-weight: bold;
+        }
+
+        > .company {
+            @include column(8);
+            .logo {
+                @include column(3);
+                opacity: 0.3;
+                @include image('logo.png', no-repeat, top, false, true);
+                height: 65px;
+            }
+            .details {
+                @include column(4);
+                .legal {
+                    padding: 0.2em 0 0 0;
+                    font-size: 160%;
+                }
+            }
+        }
+        > .details {
+            p {
+                margin: 0.2em 0;
+            }
+            .version {
+                font-weight: bold;
+            }
+            @include column(10);
+            @include prepend(5);
+        }
+    }
+}

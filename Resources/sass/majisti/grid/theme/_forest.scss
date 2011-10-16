@@ -8,5 +8,5 @@ $bgColor: #ece9de;
 $borderColor: #ccc;
 $shadowColor: #666;
 
-@import "bundles/majistiutils/images/forest/icon/maj-theme-icon-xsmall/*.png";
+@import "bundles/majistiutils/images/grid/forest/icon/maj-theme-icon-xsmall/*.png";
 @include all-maj-theme-icon-xsmall-sprites(true);
