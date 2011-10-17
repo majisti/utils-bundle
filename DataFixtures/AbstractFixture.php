@@ -24,7 +24,7 @@ abstract class AbstractFixture extends BaseAbstractFixture
     const MODE_DUMMY  = 1;
     const MODE_CRAFTY = 2;
 
-    static protected $mode = 2;
+    static protected $mode = 1;
 
     /**
      * Returns the mode for this fixture, based on the class constants.
@@ -40,10 +40,16 @@ abstract class AbstractFixture extends BaseAbstractFixture
      * Sets the load mode. Use the class constants.
      * 
      * @param int $mode 
+     * 
+     * @throws FixturesException if the mode is invalid
      */
     static public function setMode($mode)
     {
-        static::$mode = $mode;
+        if( $mode === self::MODE_DUMMY || $mode === self::MODE_CRAFTY ) {
+            static::$mode = $mode;
+        } else {
+            throw FixturesException::invalidMode($mode);
+        }
     }
 
     /**

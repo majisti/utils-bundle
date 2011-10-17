@@ -22,20 +22,6 @@ class OrmTestHelper
     protected static $kernelClass;
     protected static $kernel;
 
-    protected static $dbLoaded = false;
-
-    public function initKernel()
-    {
-        $this->getKernel();
-    }
-
-    public function initDatabase()
-    {
-        if( !static::$dbLoaded ) {
-            $this->reloadDatabase();
-        }
-    }
-
     /**
      * @return Kernel 
      */
@@ -58,22 +44,10 @@ class OrmTestHelper
         return $this->getKernel()->getContainer()->get('doctrine.orm.entity_manager');
     }
 
-    /**
-     * @return TestHelper 
-     */
-    public function reloadDatabase()
+    public function purgeDatabase()
     {
-        $em = $this->getEntityManager();
-        $schema = new SchemaTool($em);
-
-        $classes = $em->getMetadataFactory()->getAllMetadata();
-
-        $schema->dropSchema($classes);
-        $schema->createSchema($classes);
-
-        static::$dbLoaded = true;
-
-        return $this;
+        $purger = new ORMPurger($this->getEntityManager());
+        $purger->purge();
     }
 
     /**
