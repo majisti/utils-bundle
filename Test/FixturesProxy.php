@@ -25,6 +25,21 @@ class FixturesProxy
         $em = $container->get('doctrine.orm.entity_manager');
         $connection = $em->getConnection();
 
+        /* clear cache */
+        $em->clear();
+        $conf = $em->getConfiguration();
+        $caches = array(
+            $conf->getResultCacheImpl(),
+            $conf->getQueryCacheImpl(),
+            $conf->getMetadataCacheImpl(),
+        );
+
+        foreach( $caches as $cache ) {
+            if( null !== $cache ) {
+                $cache->deleteAll();
+            }
+        }
+
         if ($connection->getDriver() instanceOf \Doctrine\DBAL\Driver\PDOSqlite\Driver) {
             $params = $connection->getParams();
             $name = isset($params['path']) ? $params['path'] : $params['dbname'];
