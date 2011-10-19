@@ -1,3 +1,4 @@
+{% block footer %}
 <div class="container">
     <div class="company">
         <div class="logo"></div>
@@ -12,9 +13,11 @@
         </div>
     </div>
     <div class="details">
-        <p class="author">Conception Steven Rosato,
-            themeable design and layout by Steven Rosato and Jean-François Hamelin
-            <span class="version">v1.0.0</span>
+        <p class="author">
+            Conception by Steven Rosato
+            <span class="version">
+            {% block version %}v1.0.0{% endblock %}
+            </span>
         </p>
         <p class="twitter">
             <a href="http://twitter.com/steven_rosato">
@@ -25,3 +28,4 @@
         </p>
     </div>
 </div>
+{% endblock %}

@@ -1,5 +1,8 @@
 {% extends '::base.html.twig' %}
 
+{% use 'MajistiUtilsBundle:layout:header.html.twig' %}
+{% use 'MajistiUtilsBundle:layout:footer.html.twig' %}
+
 {% block title 'Majisti Sample Layout'|title %}
 
 {% block assets %}{% endblock %}
@@ -9,16 +12,12 @@
     <div id="top"></div>
     <div id="container">
         <div id="header">
-            {% block header %}
-                {% include 'MajistiUtilsBundle:layout:header.html.twig' %}
-            {% endblock %}
+            {{ block('header') }}
         </div>
         {% block content_layout %}{% endblock %}
     </div>
     <div id="footer">
-        {% block footer %}
-            {% include 'MajistiUtilsBundle:layout:footer.html.twig' %}
-        {% endblock %}
+        {{ block('footer') }}
     </div>
 </body>
 {% endblock %}
