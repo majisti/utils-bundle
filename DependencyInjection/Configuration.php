@@ -23,6 +23,7 @@ class Configuration implements ConfigurationInterface
         $rootNode
             ->children()
                 ->arrayNode('test')
+                    ->addDefaultsIfNotSet()
                     ->children()
                         ->booleanNode('cache_sqlite_db')->defaultTrue()
                     ->end()
