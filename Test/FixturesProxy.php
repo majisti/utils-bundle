@@ -44,8 +44,8 @@ class FixturesProxy
             $params = $connection->getParams();
             $name = isset($params['path']) ? $params['path'] : $params['dbname'];
 
-            if ($container->getParameter('liip_functional_test.cache_sqlite_db')) {
-                $backup = $container->getParameter('kernel.cache_dir').'/test_'.md5(serialize($classnames)).'.db';
+            if ($container->getParameter('majisti_utils.test.cache_sqlite_db')) {
+                $backup = $container->getParameter('kernel.cache_dir').'/test_'.md5(serialize($classnames)).'.sqlite';
                 if (file_exists($backup)) {
                     copy($backup, $name);
                     return;
