@@ -2,8 +2,8 @@
     "name": "majisti/utils",
     "require": {
         "php": ">=5.3.2",
-        "symfony/DoctrineFixturesBundle": "a66be2f077f3a4e5c3801b356b42b8782f1abbd6",
-        "liip/LiipFunctionalTestBundle": "f81963826dd51d6b8b04d87ff502a8d8dde8eb19"
+        "symfony/DoctrineFixturesBundle": "*",
+        "liip/LiipFunctionalTestBundle": "*"
     },
     "autoload": {
         "psr-0": { "Majisti\\UtilsBundle": "" }
