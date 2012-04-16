@@ -1,6 +1,5 @@
 {
     "majisti/utils": {
-        "name": "majisti/utils",
         "description": "Majisti Utils Bundle",
         "versions": {
             "master": { @composer.json }
