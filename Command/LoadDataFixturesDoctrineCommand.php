@@ -2,7 +2,7 @@
 
 namespace Majisti\UtilsBundle\Command;
 
-use Symfony\Bundle\DoctrineFixturesBundle\Command\LoadDataFixturesDoctrineCommand as BaseCommand;
+use Doctrine\Bundle\FixturesBundle\Command as BaseCommand;
 
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Input\InputInterface;
