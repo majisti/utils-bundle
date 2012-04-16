@@ -2,6 +2,7 @@
     "name": "majisti/utils",
     "require": {
         "php": ">=5.3.2"
-    }
+    },
+    "target-dir": "Majisti/UtilsBundle"
 }
 
