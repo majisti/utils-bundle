@@ -4,6 +4,7 @@ namespace Majisti\UtilsBundle\DataFixtures;
 
 use Doctrine\Common\DataFixtures\AbstractFixture as BaseAbstractFixture;
 use Doctrine\ORM\EntityManager;
+use Doctrine\Common\Persistence\ObjectManager;
 
 /**
  * Extended abstract fixture class that will add a mode for all fixtures.
@@ -74,7 +75,7 @@ abstract class AbstractFixture extends BaseAbstractFixture
      * 
      * @param type $manager 
      */
-    public function load($manager)
+    public function load(ObjectManager $manager)
     {
         switch( $this->getMode() ) {
             case self::MODE_DUMMY:
