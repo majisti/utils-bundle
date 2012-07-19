@@ -76,7 +76,13 @@ class FixturesProxy
         $classnames = (array) $classnames;
         $loader = new Loader($container);
         foreach ($classnames as $classname) {
-            $loader->addFixture(new $classname());
+            $fixture = new $classname();
+
+            if( $fixture instanceof \Symfony\Component\DependencyInjection\ContainerAwareInterface ) {
+                $fixture->setContainer($container);
+            }
+
+            $loader->addFixture($fixture);
         }
         $executor->execute($loader->getFixtures(), true);
 
