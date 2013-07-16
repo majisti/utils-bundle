@@ -38,6 +38,17 @@ class AbstractManagerTest extends \PHPUnit_Framework_TestCase
     {
         $this->fixtureC->getOrder();
     }
+
+    public function testGetFixturesShouldReturnProperFixtures()
+    {
+        $this->assertEquals(
+            array(
+                'Majisti\UtilsBundle\Tests\DataFixtures\FixtureA',
+                'Majisti\UtilsBundle\Tests\DataFixtures\FixtureB',
+            ),
+            Manager::getFixtures()
+        );
+    }
 }
 
 class Manager extends AbstractManager

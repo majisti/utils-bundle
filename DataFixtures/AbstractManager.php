@@ -42,4 +42,12 @@ abstract class AbstractManager
 
         return $key + 1;
     }
+
+    /**
+     * @return array
+     */
+    static public function getFixtures()
+    {
+        return static::$fixtures;
+    }
 }
